@@ -1,0 +1,17 @@
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\Машина.exe.config
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\Машина.exe
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\Машина.pdb
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\EntityFramework.dll
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\EntityFramework.SqlServer.dll
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\EntityFramework.xml
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\EntityFramework.SqlServer.xml
+D:\ПолесГУ\Конкурс\Машина\Машина\bin\Debug\ru\EntityFramework.resources.dll
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.csprojAssemblyReference.cache
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.Form1.resources
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.Properties.Resources.resources
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.csproj.GenerateResource.cache
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.csproj.CoreCompileInputs.cache
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.csproj.CopyComplete
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.exe
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.pdb
+D:\ПолесГУ\Конкурс\Машина\Машина\obj\Debug\Машина.Poezdki.resources

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище CarModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Клиент">
+    <Key>
+      <PropertyRef Name="Номер_клиента" />
+    </Key>
+    <Property Name="Номер_клиента" Type="int" Nullable="false" />
+    <Property Name="ФИО" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Телефон" Type="float" />
+    <Property Name="Место_высадки" Type="nvarchar(max)" />
+    <Property Name="Стоимость проезда" Type="float" />
+  </EntityType>
+  <EntityType Name="Поездки">
+    <Key>
+      <PropertyRef Name="Номер_поездки" />
+    </Key>
+    <Property Name="Номер_поездки" Type="int" Nullable="false" />
+    <Property Name="Направление" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Дата" Type="date" />
+    <Property Name="Пасажир_1" Type="nvarchar(max)" />
+    <Property Name="Пасажир_2" Type="nvarchar(max)" />
+    <Property Name="Пасажир_3" Type="nvarchar(max)" />
+    <Property Name="Пасажир_4" Type="nvarchar(max)" />
+    <Property Name="Баланс" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Услуга">
+    <Key>
+      <PropertyRef Name="Номер_услуг" />
+    </Key>
+    <Property Name="Номер_услуг" Type="int" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Дата" Type="date" />
+    <Property Name="Стоимость" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище CarModelContainer">
+    <EntitySet Name="Клиент" EntityType="Self.Клиент" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Поездки" EntityType="Self.Поездки" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Услуга" EntityType="Self.Услуга" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

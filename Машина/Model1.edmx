@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище CarModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Клиент">
+          <Key>
+            <PropertyRef Name="Номер_клиента" />
+          </Key>
+          <Property Name="Номер_клиента" Type="int" Nullable="false" />
+          <Property Name="ФИО" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Телефон" Type="float" />
+          <Property Name="Место_высадки" Type="nvarchar(max)" />
+          <Property Name="Стоимость проезда" Type="float" />
+        </EntityType>
+        <EntityType Name="Поездки">
+          <Key>
+            <PropertyRef Name="Номер_поездки" />
+          </Key>
+          <Property Name="Номер_поездки" Type="int" Nullable="false" />
+          <Property Name="Направление" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Дата" Type="date" />
+          <Property Name="Пасажир_1" Type="nvarchar(max)" />
+          <Property Name="Пасажир_2" Type="nvarchar(max)" />
+          <Property Name="Пасажир_3" Type="nvarchar(max)" />
+          <Property Name="Пасажир_4" Type="nvarchar(max)" />
+          <Property Name="Баланс" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Услуга">
+          <Key>
+            <PropertyRef Name="Номер_услуг" />
+          </Key>
+          <Property Name="Номер_услуг" Type="int" Nullable="false" />
+          <Property Name="Наименование" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Дата" Type="date" />
+          <Property Name="Стоимость" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище CarModelContainer">
+          <EntitySet Name="Клиент" EntityType="Self.Клиент" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Поездки" EntityType="Self.Поездки" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Услуга" EntityType="Self.Услуга" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Клиент">
+          <Key>
+            <PropertyRef Name="Номер_клиента" />
+          </Key>
+          <Property Name="Номер_клиента" Type="Int32" Nullable="false" />
+          <Property Name="ФИО" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Телефон" Type="Double" />
+          <Property Name="Место_высадки" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Стоимость_проезда" Type="Double" />
+        </EntityType>
+        <EntityType Name="Поездки">
+          <Key>
+            <PropertyRef Name="Номер_поездки" />
+          </Key>
+          <Property Name="Номер_поездки" Type="Int32" Nullable="false" />
+          <Property Name="Направление" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Дата" Type="DateTime" Precision="0" />
+          <Property Name="Пасажир_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Пасажир_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Пасажир_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Пасажир_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Баланс" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Услуга">
+          <Key>
+            <PropertyRef Name="Номер_услуг" />
+          </Key>
+          <Property Name="Номер_услуг" Type="Int32" Nullable="false" />
+          <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Стоимость" Type="Double" Nullable="false" />
+          <Property Name="Дата" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityContainer Name="CarEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Клиент" EntityType="Self.Клиент" />
+          <EntitySet Name="Поездки" EntityType="Self.Поездки" />
+          <EntitySet Name="Услуга" EntityType="Self.Услуга" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CarModelContainer" CdmEntityContainer="CarEntities">
+          <EntitySetMapping Name="Клиент">
+            <EntityTypeMapping TypeName="CarModel.Клиент">
+              <MappingFragment StoreEntitySet="Клиент">
+                <ScalarProperty Name="Стоимость_проезда" ColumnName="Стоимость проезда" />
+                <ScalarProperty Name="Номер_клиента" ColumnName="Номер_клиента" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+                <ScalarProperty Name="Место_высадки" ColumnName="Место_высадки" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Поездки">
+            <EntityTypeMapping TypeName="CarModel.Поездки">
+              <MappingFragment StoreEntitySet="Поездки">
+                <ScalarProperty Name="Номер_поездки" ColumnName="Номер_поездки" />
+                <ScalarProperty Name="Направление" ColumnName="Направление" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Пасажир_1" ColumnName="Пасажир_1" />
+                <ScalarProperty Name="Пасажир_2" ColumnName="Пасажир_2" />
+                <ScalarProperty Name="Пасажир_3" ColumnName="Пасажир_3" />
+                <ScalarProperty Name="Пасажир_4" ColumnName="Пасажир_4" />
+                <ScalarProperty Name="Баланс" ColumnName="Баланс" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Услуга">
+            <EntityTypeMapping TypeName="CarModel.Услуга">
+              <MappingFragment StoreEntitySet="Услуга">
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Номер_услуг" ColumnName="Номер_услуг" />
+                <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+                <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

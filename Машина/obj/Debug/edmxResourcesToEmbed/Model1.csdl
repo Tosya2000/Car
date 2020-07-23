@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Клиент">
+    <Key>
+      <PropertyRef Name="Номер_клиента" />
+    </Key>
+    <Property Name="Номер_клиента" Type="Int32" Nullable="false" />
+    <Property Name="ФИО" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Телефон" Type="Double" />
+    <Property Name="Место_высадки" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Стоимость_проезда" Type="Double" />
+  </EntityType>
+  <EntityType Name="Поездки">
+    <Key>
+      <PropertyRef Name="Номер_поездки" />
+    </Key>
+    <Property Name="Номер_поездки" Type="Int32" Nullable="false" />
+    <Property Name="Направление" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Дата" Type="DateTime" Precision="0" />
+    <Property Name="Пасажир_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Пасажир_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Пасажир_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Пасажир_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Баланс" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Услуга">
+    <Key>
+      <PropertyRef Name="Номер_услуг" />
+    </Key>
+    <Property Name="Номер_услуг" Type="Int32" Nullable="false" />
+    <Property Name="Наименование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Стоимость" Type="Double" Nullable="false" />
+    <Property Name="Дата" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityContainer Name="CarEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Клиент" EntityType="Self.Клиент" />
+    <EntitySet Name="Поездки" EntityType="Self.Поездки" />
+    <EntitySet Name="Услуга" EntityType="Self.Услуга" />
+  </EntityContainer>
+</Schema>
